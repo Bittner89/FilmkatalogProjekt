@@ -55,28 +55,26 @@ def film_suchen():
     # Zeige die Details der gefundenen Filme an (ähnlich wie filme_anzeigen)
     for titel, details in gefundene_filme.items():
         print(f"Titel: {titel}")
-        print(f"  Regisseur: {details.get('regisseur', 'N/A')}")
-        print(f"  Jahr: {details.get('jahr', 'N/A')}")
+        print(f"Regisseur: {details.get('regisseur', 'N/A')}")
+        print(f"Jahr: {details.get('jahr', 'N/A')}")
         print("-----------------------")
 
 def film_loeschen():
     print("\n--- Film löschen ---")
     titel_zu_loeschen = input("Titel des zu löschenden Films: ")
-    # Überprüfe, ob der Film im Katalog existiert
     if titel_zu_loeschen in filme:
         del filme[titel_zu_loeschen] # Entferne den Film aus dem Dictionary
         print(f"Film '{titel_zu_loeschen}' wurde aus dem Katalog entfernt.")
     else:
-        print(f"Fehler: Film '{titel_zu_loeschen}' nicht im Katalog gefunden.")
-
+        print(f"Fehler: Film '{titel_zu_loeschen}' nicht im Katalog gefunden.")        
 
 def zeige_menue():
     print("\n--- Filmkatalog Menü ---")
     print("1. Film hinzufügen")
     print("2. Filme anzeigen")
-    print("3. Film suchen") # NEU
+    print("3. Film suchen")
     print("4. Film löschen") # NEU
-    print("5. Beenden")    # NUMMER GEÄNDERT
+    print("5. Beenden")     # NUMMER GEÄNDERT
     print("------------------------")    
 
 def main():
@@ -88,7 +86,7 @@ def main():
             film_hinzufuegen()
         elif wahl == '2':
             filme_anzeigen()
-        elif wahl == '3':
+        elif wahl == '3': 
             film_suchen()
         elif wahl == '4': # NEU
             film_loeschen()    
@@ -101,6 +99,7 @@ def main():
 # Startet das Hauptprogramm, wenn die Datei direkt ausgeführt wird
 if __name__ == "__main__":
     main()
+    
 
 
  
